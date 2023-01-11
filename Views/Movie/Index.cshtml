@@ -9,6 +9,7 @@
                 <th>@Html.DisplayNameFor(model => model.Author)</th>
                 <th>@Html.DisplayNameFor(model => model.ReleaseDate)</th>
                 <th>@Html.DisplayNameFor(model => model.BoxOffice)</th>
+                <th>@Html.DisplayNameFor(model => model.Rating)</th>
                 <th></th>
             </tr>
         </thead>
@@ -27,6 +28,10 @@
                     </td>
                     <td>
                         @item.BoxOffice
+                    </td>
+                    <td>
+                        <select class="form-control" asp-for="@item.Rating"
+                            asp-items="@Html.GetEnumSelectList<Rating>()"></select>
                     </td>
                     <td>
                         <a asp-action="Show" asp-route-id="@item.Id">Details</a> |

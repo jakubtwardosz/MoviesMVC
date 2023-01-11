@@ -1,4 +1,5 @@
 ﻿using MoviesMVC.Models;
+using System.Security.Policy;
 
 namespace MoviesMVC.Models
 {
@@ -11,7 +12,8 @@ namespace MoviesMVC.Models
                 Author = "Author",
                 Description = "Description",
                 ReleaseDate = DateTime.Now,
-                BoxOffice = 199999999
+                BoxOffice = 199999999,
+                Rating = Rating.ONE
             },
             new Movie()
             {
@@ -19,7 +21,8 @@ namespace MoviesMVC.Models
                 Author = "Author2",
                 Description = "Description2",
                 ReleaseDate = DateTime.Now,
-                BoxOffice = 199999992
+                BoxOffice = 199999992,
+                Rating = Rating.ONE
             },
         };
         public static IEnumerable<Movie> Movies => repository;
