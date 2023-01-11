@@ -1,6 +1,14 @@
-﻿
+﻿@model Movie
+
 @{
     ViewData["Title"] = "Show";
 }
 
-
+<h1>@Model.Title</h1>
+<h2>@Model.Author</h2>
+<strong>Description</strong>
+<p>@Model.Description</p>
+<strong>Box Office</strong>
+<p>@Model.BoxOffice $</p>
+<strong>Release Date</strong>
+<p>@Model.ReleaseDate</p>

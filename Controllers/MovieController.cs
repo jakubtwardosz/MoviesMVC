@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MoviesMVC.Models;
+using System.Reflection;
 
 namespace MoviesMVC.Controllers
 {
@@ -10,9 +11,9 @@ namespace MoviesMVC.Controllers
             return View(Repository.Movies);
         }
 
-        public IActionResult Show()
+        public IActionResult Show(int Id)
         {
-            return View();
+            return View(Repository.Movies.SingleOrDefault(item => item.Id == Id));
         }
 
         [HttpGet]
@@ -30,6 +31,10 @@ namespace MoviesMVC.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+        public string Delete(int Id)
+        {
+            return "Hello!";
         }
     }
 }
