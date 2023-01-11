@@ -1,0 +1,14 @@
+﻿@model IEnumerable<MoviesMVC.Models.Movie>
+
+<h1>Dostępne Filmy w Wypożyczalni</h1>
+<div>
+    @foreach (MoviesMVC.Models.Movie movie in Model)
+    {
+        <div>
+            <h3>@movie.Title</h3>
+            <h4>by @movie.Director</h4>
+            <p>@movie.Description</p>
+            <p>@movie.ID</p>
+        </div>
+    }
+</div>
