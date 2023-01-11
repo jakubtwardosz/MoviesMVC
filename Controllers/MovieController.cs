@@ -26,7 +26,8 @@ namespace MoviesMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View("Film dodany pomyślnie");
+                Repository.addMovie(movie);
+                return RedirectToAction("Index");
             }
             return View();
         }
