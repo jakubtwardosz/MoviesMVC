@@ -30,6 +30,14 @@ namespace MoviesMVC.Models
         {
             repository.Add(movie);
         }
+        public static void deleteMovie(int id)
+        {
+            var item = repository.FirstOrDefault(i => i.Id == id);
+            if (item != null)
+            {
+                repository.Remove(item);
+            }
+        }
 
     }
 }

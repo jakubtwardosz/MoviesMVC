@@ -32,9 +32,10 @@ namespace MoviesMVC.Controllers
             }
             return View();
         }
-        public string Delete(int Id)
+        public IActionResult Delete(int Id)
         {
-            return "Hello!";
+            Repository.deleteMovie(Id);
+            return RedirectToAction("Index");
         }
     }
 }
