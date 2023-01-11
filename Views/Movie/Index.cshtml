@@ -2,13 +2,38 @@
 
 <h1>Dostępne Filmy w Wypożyczalni</h1>
 <div>
-    @foreach (MoviesMVC.Models.Movie movie in Model)
-    {
-        <div>
-            <h3>@movie.Title</h3>
-            <h4>by @movie.Director</h4>
-            <p>@movie.Description</p>
-            <p>@movie.ID</p>
-        </div>
-    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Title)</th>
+                <th>@Html.DisplayNameFor(model => model.Author)</th>
+                <th>@Html.DisplayNameFor(model => model.ReleaseDate)</th>
+                <th>@Html.DisplayNameFor(model => model.BoxOffice)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Movie item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Title
+                    </td>
+                    <td>
+                        @item.Author
+                    </td>
+                    <td>
+                        @item.ReleaseDate
+                    </td>
+                    <td>
+                        @item.BoxOffice
+                    </td>
+                    <td>
+                        <a asp-action="Show" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

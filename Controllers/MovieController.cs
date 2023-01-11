@@ -15,8 +15,19 @@ namespace MoviesMVC.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Film dodany pomyślnie");
+            }
             return View();
         }
     }
