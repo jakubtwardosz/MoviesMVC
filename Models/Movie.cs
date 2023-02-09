@@ -20,14 +20,19 @@ namespace MoviesMVC.Models
 
     public class Movie
     {
-        public static int AutoID = 1;
-        public int Id { get; }
+        public int Id { get; set; }
 
         [Display(Name = "Tytuł")]
         [Required]
         [StringLength(120)]
         [DataType(DataType.Text)]
         public string Title { get; set; }
+
+        [Display(Name = "Gatunek")]
+        [Required]
+        [StringLength(120)]
+        [DataType(DataType.Text)]
+        public Genre Genre { get; set; }
 
         [Display(Name = "Author")]
         [Required]
@@ -51,10 +56,5 @@ namespace MoviesMVC.Models
         [Display(Name = "Rating")]
         [Required]
         public Rating Rating { get; set; }
-
-        public Movie()
-        {
-            this.Id = AutoID++;
-        }
     }
 }
