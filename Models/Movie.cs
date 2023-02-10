@@ -29,13 +29,10 @@ namespace MoviesMVC.Models
         public string Title { get; set; }
 
         [Display(Name = "Gatunek")]
-        [Required]
-        [StringLength(120)]
         [DataType(DataType.Text)]
         public Genre Genre { get; set; }
 
         [Display(Name = "Author")]
-        [Required]
         [DataType(DataType.Text)]
         public string Author { get; set; }
 
